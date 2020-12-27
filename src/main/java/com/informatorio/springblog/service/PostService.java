@@ -17,9 +17,9 @@ public class PostService {
 
     public Iterable<Post> findAll() { return postRepository.findAll(); }
 
-    public Iterable<Post> findByTitle(String titulo) { return postRepository.getPostByTitulo(titulo); }
+    public Iterable<Post> findByTituloContiene(String titulo) { return postRepository.findByTituloContaining(titulo); }
 
-    public Iterable<Post> findByAutor(Long autor_id) { return postRepository.getPostsByAutor(autor_id); }
+    public Iterable<Post> findByPublicado(boolean publicado) { return postRepository.findByPublicado(publicado); }
 
     public Post findById(Long id) { return postRepository.getPostById(id); }
 

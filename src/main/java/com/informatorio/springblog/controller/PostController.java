@@ -27,12 +27,12 @@ public class PostController {
 
     @RequestMapping(value = "/titulo/{titulo}", method = RequestMethod.GET)
     public Iterable<Post> getByTitulo(@PathVariable String titulo) {
-        return postService.findByTitle(titulo);
+        return postService.findByTituloContiene(titulo);
     }
 
-    @RequestMapping(value = "/autor/{autor}", method = RequestMethod.GET)
-    public Iterable<Post> getByAutor(@PathVariable Long autor_id) {
-        return postService.findByAutor(autor_id);
+    @RequestMapping(value = "/publicado/{publicado}", method = RequestMethod.GET)
+    public Iterable<Post> getByPublicado(@PathVariable boolean publicado) {
+        return postService.findByPublicado(publicado);
     }
 
     @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)

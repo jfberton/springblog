@@ -10,8 +10,8 @@ import java.util.List;
 public interface PostRepository extends CrudRepository<Post, Long> {
     Post getPostById(Long id);
 
-    List<Post> getPostsByAutor(Long autor_id);
+    List<Post> findByTituloContaining(String titulo);
 
-    List<Post> getPostByTitulo(String titulo);
+    List<Post> findByPublicado(boolean publicado);
 
 }
