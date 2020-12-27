@@ -30,6 +30,10 @@ public class UsuarioService {
         return usuarioRepository.getByCiudad(ciudad);
     }
 
+    public List<Usuario> findByFechaAlta(Date fechaAlta){
+        return usuarioRepository.findByFechaAltaGreaterThan(fechaAlta);
+    }
+
     public Usuario saveOrUpdate(Usuario usuario) {
         if(usuario.getId() == null)
         {

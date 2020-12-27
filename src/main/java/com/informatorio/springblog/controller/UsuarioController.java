@@ -10,6 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @RestController
 @RequestMapping("/api/v1/usuario")
@@ -30,6 +33,14 @@ public class UsuarioController {
     @RequestMapping(value="/ciudad/{ciudad}", method = RequestMethod.GET)
     public Iterable<Usuario> getByCiudad(@PathVariable String ciudad) {
         return usuarioService.findByCiudad(ciudad);
+    }
+
+    @RequestMapping(value="/desde/{fecha}", method = RequestMethod.GET)
+    public Iterable<Usuario> getFechaAltaDesde(@PathVariable String fecha) throws ParseException {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date fechaAlta = formatter.parse(fecha);
+
+        return usuarioService.findByFechaAlta(fechaAlta);
     }
 
     @RequestMapping(value = "/{id}")

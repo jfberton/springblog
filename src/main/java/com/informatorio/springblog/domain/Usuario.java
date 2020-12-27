@@ -1,7 +1,9 @@
 package com.informatorio.springblog.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -33,6 +35,8 @@ public class Usuario {
     private String password;
 
     @Column(nullable = false)
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date fechaAlta;
 
     @Column(nullable = false)
