@@ -30,9 +30,9 @@ public class PostController {
         return postService.findByTituloContiene(titulo);
     }
 
-    @RequestMapping(value = "/publicado/{publicado}", method = RequestMethod.GET)
-    public Iterable<Post> getByPublicado(@PathVariable boolean publicado) {
-        return postService.findByPublicado(publicado);
+    @RequestMapping(value = "/sinPublicar", method = RequestMethod.GET)
+    public Iterable<Post> getByPublicado() {
+        return postService.findByPublicado(false);
     }
 
     @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
