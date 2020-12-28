@@ -36,7 +36,6 @@ public class Post {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="usuario_id", nullable = false)
-    @JsonIgnore
     private Usuario autor;
 
     @Column(nullable = false)

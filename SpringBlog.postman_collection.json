@@ -1,0 +1,539 @@
+{
+	"info": {
+		"_postman_id": "a437acb0-851c-4d37-bc0c-ede55013c319",
+		"name": "SpringBlog",
+		"description": "Listado de llamadas a la API de SpringBlog, actividad final JAVA - informatorio 2020",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario alta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Juan\",\r\n    \"apellido\":\"Perez\",\r\n    \"email\":\"fede.berton@outlook.com\",\r\n    \"password\":\"berton123\",\r\n    \"ciudad\":\"Resistencia\",\r\n    \"provincia\":\"Chaco\",\r\n    \"país\":\"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuario"
+					]
+				},
+				"description": "Alta usuario"
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario modificacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"nombre\":\"Juan\",\r\n    \"apellido\":\"Perez\",\r\n    \"email\":\"fede.berton@outlook.com\",\r\n    \"password\":\"berton123\",\r\n    \"ciudad\":\"Resistencia\",\r\n    \"provincia\":\"Chaco\",\r\n    \"país\":\"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Monitor\",\r\n    \"description\":\"23 pulgadas\",\r\n    \"status\":\"ok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuario/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuario",
+						"2"
+					]
+				},
+				"description": "Eliminar usuario"
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuario"
+					]
+				},
+				"description": "Obtener usuarios"
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario por ciudad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuario/ciudad/Resistencia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuario",
+						"ciudad",
+						"Resistencia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios desde una fecha dada",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuario/desde/28-12-2020",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuario",
+						"desde",
+						"28-12-2020"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post alta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"titulo\":\"Primer post\",\r\n    \"descripcion\":\"Descripcion del primer post\",\r\n    \"contenido\":\"Aqui me pongo a codear porque tengo que aprobar\",\r\n    \"publicado\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/post/autor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						"autor",
+						"1"
+					]
+				},
+				"description": "Agregar post\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Post modificacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"titulo\":\"Primer post\",\r\n    \"descripcion\":\"Descripcion del primer post\",\r\n    \"contenido\":\"Aqui me pongo a codear porque tengo que aprobar\",\r\n    \"publicado\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/post/autor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						"autor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Juan\",\r\n    \"apellido\":\"Perez\",\r\n    \"email\":\"fede.berton@outlook.com\",\r\n    \"password\":\"berton123\",\r\n    \"ciudad\":\"Resistencia\",\r\n    \"provincia\":\"Chaco\",\r\n    \"país\":\"Argentina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/post/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"post"
+					]
+				},
+				"description": "Obtener los post"
+			},
+			"response": []
+		},
+		{
+			"name": "Post cuyos titulos contienen palabra buscada",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/post/titulo/Primer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						"titulo",
+						"Primer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post sin publicar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/post/sinPublicar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"post",
+						"sinPublicar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comentario alta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"comentario\":\"Este es un buen comentario\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/comentario/post/1/autor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comentario",
+						"post",
+						"1",
+						"autor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comentario modificacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"comentario\":\"Este es un buen comentario\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/comentario/post/1/autor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comentario",
+						"post",
+						"1",
+						"autor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comentario eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"comentario\":\"un comentario malo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/comentario/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comentario",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comentario obtener todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"comentario\":\"un comentario malo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/comentario/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comentario",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comentario obtener por post",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"comentario\":\"un comentario malo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/comentario/post/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comentario",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comentario obtener por post con limite de respuestas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"comentario\":\"un comentario malo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/comentario/post/1/limite/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comentario",
+						"post",
+						"1",
+						"limite",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

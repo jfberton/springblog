@@ -51,9 +51,6 @@ public class Usuario {
     @NotBlank(message = "El pais no puede estar en blanco")
     private String país;
 
-    @OneToMany(mappedBy = "autor", fetch = FetchType.LAZY)
-    private Set<Post> pots;
-
     public Usuario() {}
 
     public Usuario(@NotBlank(message = "El nombre no puede estar vacio") String nombre, @NotBlank(message = "El apellido no puede estar vacio") String apellido, @Email(message = "Ingrese un email válido") String email, @NotBlank(message = "La contraseña no puede estar en blanco") String password, Date fechaAlta, @NotBlank(message = "La ciudad no puede estar en blanco") String ciudad, @NotBlank(message = "La provincia no puede estar en blanco") String provincia, @NotBlank(message = "El pais no puede estar en blanco") String país) {
@@ -129,13 +126,5 @@ public class Usuario {
 
     public void setPaís(String país) {
         this.país = país;
-    }
-
-    public Set<Post> getPots() {
-        return pots;
-    }
-
-    public void setPots(Set<Post> pots) {
-        this.pots = pots;
     }
 }
