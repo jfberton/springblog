@@ -40,9 +40,8 @@ public class PostService {
     }
 
     public void delete(Long id){
-            Post post = postRepository.getPostById(id);
-            postRepository.delete(post);
+        Post post = postRepository.getPostById(id);
+        postRepository.delete(post);
     }
-
 
 }
